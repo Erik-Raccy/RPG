@@ -1,0 +1,124 @@
+Mono path[0] = 'C:/Users/Erik/Documents/GitHub/Tibinirim/Tibinirim/TestBuild_0_Data/Managed'
+Mono path[1] = 'C:/Users/Erik/Documents/GitHub/Tibinirim/Tibinirim/TestBuild_0_Data/Mono'
+Mono config path = 'C:/Users/Erik/Documents/GitHub/Tibinirim/Tibinirim/TestBuild_0_Data/Mono/etc'
+PlayerConnection initialized from C:/Users/Erik/Documents/GitHub/Tibinirim/Tibinirim/TestBuild_0_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55047
+Multi-casting "[IP] 192.168.0.2 [Port] 55047 [Flags] 2 [Guid] 1380209757 [EditorId] 3708803238 [Version] 1048832 [Id] WindowsPlayer(Erik) [Debug] 0" to [225.0.0.222:54997]...
+PlayerConnection already initialized - listening to [192.168.0.2:55047]
+Initialize engine version: 5.3.4f1 (fdbb5133b820)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 770M (ID=0x11e0)
+    Vendor:   NVIDIA
+    VRAM:     2976 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\TestBuild_0_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\TestBuild_0_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\TestBuild_0_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\TestBuild_0_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\TestBuild_0_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\TestBuild_0_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\TestBuild_0_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\TestBuild_0_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.059 seconds
+Platform assembly: C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\TestBuild_0_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\TestBuild_0_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 3280x1080 at -1360,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.793722 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 25c1c -> priority: 1 
+  Thread -> id: 25d1c -> priority: 1 
+Refreshing hosts
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+NetworkManagerScript:OnGUI() (at C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\Assets\Scripts\NetworkManagerScript.cs:84)
+ 
+(Filename: C:/Users/Erik/Documents/GitHub/Tibinirim/Tibinirim/Assets/Scripts/NetworkManagerScript.cs Line: 84)
+
+0
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+NetworkManagerScript:refreshHostList() (at C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\Assets\Scripts\NetworkManagerScript.cs:51)
+NetworkManagerScript:OnGUI() (at C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\Assets\Scripts\NetworkManagerScript.cs:85)
+ 
+(Filename: C:/Users/Erik/Documents/GitHub/Tibinirim/Tibinirim/Assets/Scripts/NetworkManagerScript.cs Line: 51)
+
+1
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+NetworkManagerScript:Update() (at C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\Assets\Scripts\NetworkManagerScript.cs:37)
+ 
+(Filename: C:/Users/Erik/Documents/GitHub/Tibinirim/Tibinirim/Assets/Scripts/NetworkManagerScript.cs Line: 37)
+
+Mono path[0] = 'C:/Users/Erik/Documents/GitHub/Tibinirim/Tibinirim/TestBuild_0_Data/Managed'
+Mono path[1] = 'C:/Users/Erik/Documents/GitHub/Tibinirim/Tibinirim/TestBuild_0_Data/Mono'
+Mono config path = 'C:/Users/Erik/Documents/GitHub/Tibinirim/Tibinirim/TestBuild_0_Data/Mono/etc'
+PlayerConnection initialized from C:/Users/Erik/Documents/GitHub/Tibinirim/Tibinirim/TestBuild_0_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55462
+Multi-casting "[IP] 192.168.0.2 [Port] 55462 [Flags] 2 [Guid] 3674170046 [EditorId] 3708803238 [Version] 1048832 [Id] WindowsPlayer(Erik) [Debug] 0" to [225.0.0.222:54997]...
+PlayerConnection already initialized - listening to [192.168.0.2:55462]
+Initialize engine version: 5.3.4f1 (fdbb5133b820)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 770M (ID=0x11e0)
+    Vendor:   NVIDIA
+    VRAM:     2976 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\TestBuild_0_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\TestBuild_0_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\TestBuild_0_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\TestBuild_0_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\TestBuild_0_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\TestBuild_0_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\TestBuild_0_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\TestBuild_0_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.072 seconds
+Platform assembly: C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\TestBuild_0_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\TestBuild_0_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 3280x1080 at -1360,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.933565 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 1d1c4 -> priority: 1 
+  Thread -> id: 25f7c -> priority: 1 
+Refreshing hosts
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+NetworkManagerScript:OnGUI() (at C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\Assets\Scripts\NetworkManagerScript.cs:84)
+ 
+(Filename: C:/Users/Erik/Documents/GitHub/Tibinirim/Tibinirim/Assets/Scripts/NetworkManagerScript.cs Line: 84)
+
+0
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+NetworkManagerScript:refreshHostList() (at C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\Assets\Scripts\NetworkManagerScript.cs:51)
+NetworkManagerScript:OnGUI() (at C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\Assets\Scripts\NetworkManagerScript.cs:85)
+ 
+(Filename: C:/Users/Erik/Documents/GitHub/Tibinirim/Tibinirim/Assets/Scripts/NetworkManagerScript.cs Line: 51)
+
+1
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+NetworkManagerScript:Update() (at C:\Users\Erik\Documents\GitHub\Tibinirim\Tibinirim\Assets\Scripts\NetworkManagerScript.cs:37)
+ 
+(Filename: C:/Users/Erik/Documents/GitHub/Tibinirim/Tibinirim/Assets/Scripts/NetworkManagerScript.cs Line: 37)
+
