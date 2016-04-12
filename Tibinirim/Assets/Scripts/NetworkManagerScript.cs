@@ -16,11 +16,13 @@ public class NetworkManagerScript : MonoBehaviour {
 	float buttonH;
 
 
-	// Use this for initialization
+	/* Use this for initialization
+        addresses set to 127.0.0.1(localhost) for current setup as services will be moved to static server at some point
+    */
 	void Start () {
-		MasterServer.ipAddress = "192.168.0.2"; //24.36.54.199
+		MasterServer.ipAddress = "127.0.0.1"; //24.36.54.199 used to be the unity mandatory connection address
 		MasterServer.port = 23466;
-		Network.natFacilitatorIP = "192.168.0.2";
+		Network.natFacilitatorIP = "127.0.0.1";
 		Network.natFacilitatorPort = 50005;
 
 		buttonX = Screen.width * 0.05f;

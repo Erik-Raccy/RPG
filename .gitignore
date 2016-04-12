@@ -43,6 +43,7 @@ sysinfo.txt
 /*.booproj
 
 /*.pdb
+/*.[Bb]uild_*
  
 # ============ #
 # OS generated #
@@ -53,7 +54,7 @@ sysinfo.txt
 .Trashes
 Icon?
 ehthumbs.db
-[Tt]humbs.db
+[Tt]humbs.db*
 
 
 # =========================
@@ -84,3 +85,8 @@ ehthumbs.db
 Network Trash Folder
 Temporary Items
 .apdisk
+
+Tibinirim/ProjectSettings/ProjectVersion.txt
+
+
+

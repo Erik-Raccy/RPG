@@ -75,28 +75,31 @@ public class Player : MonoBehaviour {
 
 	void CheckNextTile(Vector3 direction) {
 		RaycastHit hit;
-		if (Physics.Raycast (transform.position, direction, out hit, 1)) {
+		if (Physics.Raycast (transform.position, direction, out hit, 1))
+        {
 			//do nothing if terrain is inaccessable
 			if (hit.collider.gameObject.tag == "Blocked") {
 			}
 			//if you hit a ramp, adjust trajectory up or down
-			else if (hit.collider.gameObject.tag == "Ramp Up") {
-				if (hit.collider.gameObject.transform.forward == model.transform.forward) {
-					increment = 0;
-					isMoving = true;
-					speedModifier = 3;
-					startPoint = transform.position;
-					endPoint = new Vector3 (endPoint.x + (endPoint.x - startPoint.x), endPoint.y + 1, endPoint.z + (endPoint.z - startPoint.z));
-				} else if (hit.collider.gameObject.transform.forward == -model.transform.forward) {
-					increment = 0;
-					isMoving = true;
-					speedModifier = 3;
-					startPoint = transform.position;
-					endPoint = new Vector3 (endPoint.x + (endPoint.x - startPoint.x), endPoint.y - 1, endPoint.z + (endPoint.z - startPoint.z));
-				}
+			else if (hit.collider.gameObject.tag == "Ramp Up")
+            {
+				increment = 0;
+				isMoving = true;
+				speedModifier = 3;
+				startPoint = transform.position;
+				endPoint = new Vector3 (endPoint.x + (endPoint.x - startPoint.x), endPoint.y + 1, endPoint.z + (endPoint.z - startPoint.z));
 			}
-		//otherwise, move normally
-		} else {
+            else if (hit.collider.gameObject.tag == "Ramp Down")
+            {
+				increment = 0;
+				isMoving = true;
+				speedModifier = 3;
+				startPoint = transform.position;
+				endPoint = new Vector3 (endPoint.x + (endPoint.x - startPoint.x), endPoint.y - 1, endPoint.z + (endPoint.z - startPoint.z));
+			}
+		}
+        //otherwise, move normally
+        else {
 			increment = 0;
 			isMoving = true;
 			speedModifier = 1;
