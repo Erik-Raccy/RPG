@@ -13,15 +13,14 @@ public class Player : MonoBehaviour {
 	private float increment;
 	private bool isMoving;
 
-<<<<<<< HEAD
+
 	private Animator animator;
-=======
+
     private int maxHealth;
     private int health;
 
 	private GameObject model;
     private Camera cam;
->>>>>>> origin/master
 
 	// Use this for initialization
 	void Start () {
@@ -31,12 +30,12 @@ public class Player : MonoBehaviour {
 		isMoving = false;
 		startPoint = transform.position;
 		endPoint = transform.position;
-<<<<<<< HEAD
+
 		animator = GetComponent<Animator> ();
-=======
+
         maxHealth = 1000;
         health = maxHealth;
->>>>>>> origin/master
+
 	}
 	
 	// Update is called once per frame
@@ -96,7 +95,6 @@ public class Player : MonoBehaviour {
 				
 
             //end Movement Block
-			Debug.Log(!Input.GetKey ("w"));
         }
 	}
 
