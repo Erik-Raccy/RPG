@@ -3,7 +3,7 @@ using System.Collections;
 
 
 
-public class Player : MonoBehaviour {
+public class PlayerMovementScript : MonoBehaviour {
 
 	private Vector3 startPoint;
 	private Vector3 endPoint;
