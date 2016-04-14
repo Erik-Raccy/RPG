@@ -1,0 +1,63 @@
+Mono path[0] = 'C:/Users/Erik/Documents/GitHub/RPG/Tibinirim/build_0.0.01_Data/Managed'
+Mono path[1] = 'C:/Users/Erik/Documents/GitHub/RPG/Tibinirim/build_0.0.01_Data/Mono'
+Mono config path = 'C:/Users/Erik/Documents/GitHub/RPG/Tibinirim/build_0.0.01_Data/Mono/etc'
+PlayerConnection initialized from C:/Users/Erik/Documents/GitHub/RPG/Tibinirim/build_0.0.01_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55330
+Multi-casting "[IP] 192.168.0.2 [Port] 55330 [Flags] 2 [Guid] 2463681312 [EditorId] 3854155077 [Version] 1048832 [Id] WindowsPlayer(Erik) [Debug] 0" to [225.0.0.222:54997]...
+PlayerConnection already initialized - listening to [192.168.0.2:55330]
+Initialize engine version: 5.3.4f1 (fdbb5133b820)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 770M (ID=0x11e0)
+    Vendor:   NVIDIA
+    VRAM:     2976 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Erik\Documents\GitHub\RPG\Tibinirim\build_0.0.01_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Erik\Documents\GitHub\RPG\Tibinirim\build_0.0.01_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Erik\Documents\GitHub\RPG\Tibinirim\build_0.0.01_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Erik\Documents\GitHub\RPG\Tibinirim\build_0.0.01_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Erik\Documents\GitHub\RPG\Tibinirim\build_0.0.01_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Erik\Documents\GitHub\RPG\Tibinirim\build_0.0.01_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Erik\Documents\GitHub\RPG\Tibinirim\build_0.0.01_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Erik\Documents\GitHub\RPG\Tibinirim\build_0.0.01_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.048 seconds
+Platform assembly: C:\Users\Erik\Documents\GitHub\RPG\Tibinirim\build_0.0.01_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Erik\Documents\GitHub\RPG\Tibinirim\build_0.0.01_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 3280x1080 at -1360,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.561507 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 2713c -> priority: 1 
+  Thread -> id: 272f4 -> priority: 1 
+starting server
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+NetworkManagerScript:OnGUI() (at C:\Users\Erik\Documents\GitHub\RPG\Tibinirim\Assets\Scripts\NetworkManagerScript.cs:81)
+ 
+(Filename: C:/Users/Erik/Documents/GitHub/RPG/Tibinirim/Assets/Scripts/NetworkManagerScript.cs Line: 81)
+
+server initialized
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+NetworkManagerScript:OnServerInitialized() (at C:\Users\Erik\Documents\GitHub\RPG\Tibinirim\Assets\Scripts\NetworkManagerScript.cs:57)
+UnityEngine.Network:InitializeServer(Int32, Int32, Boolean)
+NetworkManagerScript:startServer() (at C:\Users\Erik\Documents\GitHub\RPG\Tibinirim\Assets\Scripts\NetworkManagerScript.cs:46)
+NetworkManagerScript:OnGUI() (at C:\Users\Erik\Documents\GitHub\RPG\Tibinirim\Assets\Scripts\NetworkManagerScript.cs:82)
+ 
+(Filename: C:/Users/Erik/Documents/GitHub/RPG/Tibinirim/Assets/Scripts/NetworkManagerScript.cs Line: 57)
+
+The connection request to 127.0.0.1:50005 failed. Are you sure the server can be connected to?
+ 
+(Filename: C:/buildslave/unity/build/Runtime/Network/NetworkManager.cpp Line: 666)
+
+Failed to connect to master server at 127.0.0.1:23466
+ 
+(Filename: C:/buildslave/unity/build/Runtime/Network/MasterServerInterface.cpp Line: 236)
+

@@ -1,9 +1,9 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NetworkManagerScript.cs">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Prefabs\Player\Player.cs">
     <Files>
-      <File FileName="Assets\Prefabs\Player\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\NetworkManagerScript.cs" Line="59" Column="4" />
+      <File FileName="Assets\Prefabs\Player\Player.cs" Line="77" Column="4" />
+      <File FileName="Assets\Scripts\NetworkManagerScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Textures\TileProperties.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

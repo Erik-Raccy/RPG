@@ -13,18 +13,17 @@ public class Player : MonoBehaviour {
 	private float increment;
 	private bool isMoving;
 
-	private GameObject model;
-    private Camera cam;
+	private Animator animator;
 
 	// Use this for initialization
 	void Start () {
-		model = GameObject.Find ("Cube");
         speed = 3;
 		speedModifier = 1;
 		increment = 0;
 		isMoving = false;
 		startPoint = transform.position;
 		endPoint = transform.position;
+		animator = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -43,38 +42,53 @@ public class Player : MonoBehaviour {
             if (isMoving)
             {
                 transform.position = Vector3.Lerp(startPoint, endPoint, increment);
+
             }
 
-            if (Input.GetKey("w") && isMoving == false)
-            {
-                model.transform.forward = Vector3.forward;
-                endPoint = new Vector3(transform.position.x, transform.position.y, transform.position.z + 1);
-                CheckNextTile(Vector3.forward);
-            }
-            else if (Input.GetKey("s") && isMoving == false)
-            {
-                model.transform.forward = Vector3.back;
-                endPoint = new Vector3(transform.position.x, transform.position.y, transform.position.z - 1);
-                CheckNextTile(Vector3.back);
-            }
-            else if (Input.GetKey("a") && isMoving == false)
-            {
-                model.transform.forward = Vector3.left;
-                endPoint = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
-                CheckNextTile(Vector3.left);
-            }
-            else if (Input.GetKey("d") && isMoving == false)
-            {
-                model.transform.forward = Vector3.right;
-                endPoint = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
-                CheckNextTile(Vector3.right);
-            }
+			if (Input.GetKey ("w") && isMoving == false) {
+				animator.SetFloat ("Walk", 1);
+
+				transform.GetChild (0).forward = Vector3.forward;
+				endPoint = new Vector3 (transform.position.x, transform.position.y, transform.position.z + 1);
+				CheckNextTile (Vector3.forward);
+
+			} else if (Input.GetKey ("s") && isMoving == false) {
+				animator.SetFloat ("Walk", 1);
+
+				transform.GetChild (0).forward = Vector3.back;
+				endPoint = new Vector3 (transform.position.x, transform.position.y, transform.position.z - 1);
+				CheckNextTile (Vector3.back);
+
+			} else if (Input.GetKey ("a") && isMoving == false) {
+				animator.SetFloat ("Walk", 1);
+
+				transform.GetChild (0).forward = Vector3.left;
+				endPoint = new Vector3 (transform.position.x - 1, transform.position.y, transform.position.z);
+				CheckNextTile (Vector3.left);
+
+			} else if (Input.GetKey ("d") && isMoving == false) {
+				animator.SetFloat ("Walk", 1);
+
+				transform.GetChild (0).forward = Vector3.right;
+				endPoint = new Vector3 (transform.position.x + 1, transform.position.y, transform.position.z);
+				CheckNextTile (Vector3.right);
+			
+			}
+
+			//if no movement keys are held down, and you have reached the next tile, cancel the walk animation
+			if (!Input.GetKey ("w") && !Input.GetKey ("s") && !Input.GetKey ("a") && !Input.GetKey ("d") && increment >= 1) {
+				animator.SetFloat ("Walk", 0);
+			}
+				
+
             //end Movement Block
+			Debug.Log(!Input.GetKey ("w"));
         }
 	}
 
 	void CheckNextTile(Vector3 direction) {
 		RaycastHit hit;
+		Debug.DrawRay (transform.position, direction);
 		if (Physics.Raycast (transform.position, direction, out hit, 1))
         {
 			//do nothing if terrain is inaccessable
