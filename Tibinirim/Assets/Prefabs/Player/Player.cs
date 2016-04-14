@@ -13,7 +13,15 @@ public class Player : MonoBehaviour {
 	private float increment;
 	private bool isMoving;
 
+<<<<<<< HEAD
 	private Animator animator;
+=======
+    private int maxHealth;
+    private int health;
+
+	private GameObject model;
+    private Camera cam;
+>>>>>>> origin/master
 
 	// Use this for initialization
 	void Start () {
@@ -23,13 +31,19 @@ public class Player : MonoBehaviour {
 		isMoving = false;
 		startPoint = transform.position;
 		endPoint = transform.position;
+<<<<<<< HEAD
 		animator = GetComponent<Animator> ();
+=======
+        maxHealth = 1000;
+        health = maxHealth;
+>>>>>>> origin/master
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (GetComponent<NetworkView>().isMine)
         {
+            
             //Movement Code Block
             if (increment <= 1 && isMoving)
             {
@@ -120,6 +134,18 @@ public class Player : MonoBehaviour {
 			startPoint = transform.position;
 		}
 	}
+
+    public void hit(int damage = 100) {
+        health = (health - damage > 0) ? (health - damage) : 0;
+    }
+    public void heal(int healing = 100)
+    {
+        health = (health + healing <= maxHealth) ? health + healing : maxHealth;
+    }
+    public void fullHeal()
+    {
+        health = maxHealth;
+    }
 
 }
 
