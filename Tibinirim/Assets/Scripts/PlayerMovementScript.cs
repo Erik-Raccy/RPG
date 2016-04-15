@@ -103,8 +103,13 @@ public class PlayerMovementScript : MonoBehaviour {
 		Debug.DrawRay (transform.position, direction);
 		if (Physics.Raycast (transform.position, direction, out hit, 1))
         {
-			//do nothing if terrain is inaccessable
-			if (hit.collider.gameObject.tag == "Blocked") {
+            //do nothing if terrain is inaccessable
+            if (hit.collider.gameObject.tag == "Enemy")
+            {
+                this.hit(1);
+                Debug.Log(health);
+            }
+            if (hit.collider.gameObject.tag == "Blocked") {
 			}
 			//if you hit a ramp, adjust trajectory up or down
 			else if (hit.collider.gameObject.tag == "Ramp Up")
@@ -133,7 +138,7 @@ public class PlayerMovementScript : MonoBehaviour {
 		}
 	}
 
-    public void hit(int damage = 100) {
+    public void hit(int damage = 1) {
         health = (health - damage > 0) ? (health - damage) : 0;
     }
     public void heal(int healing = 100)
