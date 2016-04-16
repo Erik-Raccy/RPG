@@ -13,14 +13,12 @@ public class PlayerMovementScript : MonoBehaviour {
 	private float increment;
 	private bool isMoving;
 
-
 	private Animator animator;
-
-    private int maxHealth;
-    private int health;
 
 	private GameObject model;
     private Camera cam;
+
+	private PlayerStatsScript stats;
 
 	// Use this for initialization
 	void Start () {
@@ -31,10 +29,8 @@ public class PlayerMovementScript : MonoBehaviour {
 		startPoint = transform.position;
 		endPoint = transform.position;
 
+		stats = GetComponent<PlayerStatsScript> ();
 		animator = GetComponent<Animator> ();
-
-        maxHealth = 1000;
-        health = maxHealth;
 
 	}
 	
@@ -106,8 +102,7 @@ public class PlayerMovementScript : MonoBehaviour {
             //do nothing if terrain is inaccessable
             if (hit.collider.gameObject.tag == "Enemy")
             {
-                this.hit(1);
-                Debug.Log(health);
+                stats.hit(1);
             }
             if (hit.collider.gameObject.tag == "Blocked") {
 			}
@@ -137,18 +132,6 @@ public class PlayerMovementScript : MonoBehaviour {
 			startPoint = transform.position;
 		}
 	}
-
-    public void hit(int damage = 1) {
-        health = (health - damage > 0) ? (health - damage) : 0;
-    }
-    public void heal(int healing = 100)
-    {
-        health = (health + healing <= maxHealth) ? health + healing : maxHealth;
-    }
-    public void fullHeal()
-    {
-        health = maxHealth;
-    }
 
 }
 

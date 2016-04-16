@@ -45,10 +45,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\EnemyPropertiesScript.cs" />
      <Compile Include="Assets\Scripts\NetworkCamera.cs" />
      <Compile Include="Assets\Scripts\NetworkManagerScript.cs" />
      <Compile Include="Assets\Scripts\OverHeadUIScript.cs" />
      <Compile Include="Assets\Scripts\PlayerMovementScript.cs" />
+     <Compile Include="Assets\Scripts\PlayerStatsScript.cs" />
+     <Compile Include="Assets\Scripts\Utility.cs" />
      <Compile Include="Assets\Textures\TileProperties.cs" />
      <None Include="Assets\Medieval_Toon_Character\ReadMe.txt" />
  <Reference Include="UnityEngine.UI">
