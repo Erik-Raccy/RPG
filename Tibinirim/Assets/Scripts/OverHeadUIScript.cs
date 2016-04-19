@@ -16,9 +16,14 @@ public class OverHeadUIScript : MonoBehaviour {
 	public Slider stamanaSlider;
 	public Text stamanaText;
 
+	private Vector3[] pts = new Vector3[8];
+	public float margin = 0;
+	Bounds b;
+
 	// Use this for initialization
 	void Start () {
 		camera = GetComponentInChildren<Camera> ();
+		//b = GetComponentInChildren<SkinnedMeshRenderer>().bounds;
 	}
 	
 	// find player location on screen from camera and draw their name tag
@@ -55,6 +60,46 @@ public class OverHeadUIScript : MonoBehaviour {
 	public void setStamanaSliderMaxValue(int maxStamana) {
 		stamanaSlider.maxValue = maxStamana;
 		stamanaText.text = "Stamana: " + stamanaSlider.value + " / " + maxStamana;
+	}
+
+	public void drawTargetBox (GameObject target) {
+		if (target.GetComponent<MeshRenderer> () != null) {
+			b = target.GetComponent<MeshRenderer> ().bounds;
+		} else if (target.GetComponentInChildren<SkinnedMeshRenderer> () != null) {
+			b = target.GetComponentInChildren<SkinnedMeshRenderer> ().bounds;
+		}
+			
+
+		pts [0] = camera.WorldToScreenPoint (new Vector3 (b.center.x + b.extents.x, b.center.y + b.extents.y, b.center.z + b.extents.z));
+		pts [1] = camera.WorldToScreenPoint (new Vector3 (b.center.x + b.extents.x, b.center.y + b.extents.y, b.center.z - b.extents.z));
+		pts [2] = camera.WorldToScreenPoint (new Vector3 (b.center.x + b.extents.x, b.center.y - b.extents.y, b.center.z + b.extents.z));
+		pts [3] = camera.WorldToScreenPoint (new Vector3 (b.center.x + b.extents.x, b.center.y - b.extents.y, b.center.z - b.extents.z));
+		pts [4] = camera.WorldToScreenPoint (new Vector3 (b.center.x - b.extents.x, b.center.y + b.extents.y, b.center.z + b.extents.z));
+		pts [5] = camera.WorldToScreenPoint (new Vector3 (b.center.x - b.extents.x, b.center.y + b.extents.y, b.center.z - b.extents.z));
+		pts [6] = camera.WorldToScreenPoint (new Vector3 (b.center.x - b.extents.x, b.center.y - b.extents.y, b.center.z + b.extents.z));
+		pts [7] = camera.WorldToScreenPoint (new Vector3 (b.center.x - b.extents.x, b.center.y - b.extents.y, b.center.z - b.extents.z));
+
+		//Get them in GUI space
+		for (int i = 0; i < pts.Length; i++)
+			pts [i].y = Screen.height - pts [i].y;
+
+		//Calculate the min and max positions
+		Vector3 min = pts [0];
+		Vector3 max = pts [0];
+		for (int i = 1; i < pts.Length; i++) {
+			min = Vector3.Min (min, pts [i]);
+			max = Vector3.Max (max, pts [i]);
+		}
+
+		//Construct a rect of the min and max positions and apply some margin
+		Rect r = Rect.MinMaxRect (min.x, min.y, max.x, max.y);
+		r.xMin -= margin;
+		r.xMax += margin;
+		r.yMin -= margin;
+		r.yMax += margin;
+
+		//Render the box
+		GUI.Box (r, "This is a box covering the player");
 	}
 
 }

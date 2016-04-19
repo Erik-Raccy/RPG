@@ -16,7 +16,6 @@ public class PlayerMovementScript : MonoBehaviour {
 	private Animator animator;
 
 	private GameObject model;
-    private Camera cam;
 
 	private PlayerStatsScript stats;
 

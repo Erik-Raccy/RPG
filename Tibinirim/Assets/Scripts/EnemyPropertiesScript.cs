@@ -3,17 +3,20 @@ using System.Collections;
 using System.Linq;
 public class EnemyPropertiesScript : MonoBehaviour {
     public Utility Utility;
-    private int Health { get; set; }
+
+	public string Name;
+    private int health { get; set; }
     private int MaxHealth { get; set; }
     private int Speed { get; set; }
     private int TargetLevel { get; set; }
     private int Damage { get; set; }
+
     Transform closeEnemy;
     private bool Target; 
     // Use this for initialization
     void Start () {
         MaxHealth = 1000;
-        Speed = 2;
+        Speed = 1;
         TargetLevel = 10;
         Damage = 100;
         Utility = GetComponent<Utility>();
@@ -31,5 +34,9 @@ public class EnemyPropertiesScript : MonoBehaviour {
         
     }
 
+	public void hit(int damage = 1) {
+		health = (health - damage > 0) ? (health - damage) : 0;
+		//UI.setHealthSliderValue (health);
+	}
     
 }
