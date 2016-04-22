@@ -59,7 +59,7 @@ public class PlayerStatsScript : MonoBehaviour {
 			}
 		}
 
-		//if the targeted enemy is in range, hit it	
+		//if the targeted enemy is in range, hit it
 		if (targetEnemy != null) {
 			if (Vector3.Distance (targetEnemy.transform.position, transform.position) < 1.5) {
 				EnemyPropertiesScript enemyScript = targetEnemy.GetComponent<EnemyPropertiesScript> ();

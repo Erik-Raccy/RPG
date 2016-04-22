@@ -4,7 +4,7 @@ using System.Collections;
 
 public class OverHeadUIScript : MonoBehaviour {
 	private Vector3 screenPosition;
-	Camera camera;
+	//Camera camera;
 
 	//Sliders and text for UI imported via editor
 	public Slider healthSlider;
@@ -22,13 +22,13 @@ public class OverHeadUIScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		camera = GetComponentInChildren<Camera> ();
+		//camera = GetComponentInChildren<Camera> ();
 		//b = GetComponentInChildren<SkinnedMeshRenderer>().bounds;
 	}
-	
+
 	// find player location on screen from camera and draw their name tag
 	void OnGUI () {
-		screenPosition = camera.WorldToScreenPoint(transform.position);// gets screen position.
+		screenPosition = Camera.main.WorldToScreenPoint(transform.position);// gets screen position.
 		screenPosition.y = Screen.height - (screenPosition.y + 1);// inverts y
 		Rect rect = new Rect(screenPosition.x - 50, screenPosition.y - 100, 100, 24);// makes a rect centered at the player ( 100x24 )
 		GUI.Box(rect, "Bob Ross");
@@ -70,14 +70,14 @@ public class OverHeadUIScript : MonoBehaviour {
 		}
 			
 
-		pts [0] = camera.WorldToScreenPoint (new Vector3 (b.center.x + b.extents.x, b.center.y + b.extents.y, b.center.z + b.extents.z));
-		pts [1] = camera.WorldToScreenPoint (new Vector3 (b.center.x + b.extents.x, b.center.y + b.extents.y, b.center.z - b.extents.z));
-		pts [2] = camera.WorldToScreenPoint (new Vector3 (b.center.x + b.extents.x, b.center.y - b.extents.y, b.center.z + b.extents.z));
-		pts [3] = camera.WorldToScreenPoint (new Vector3 (b.center.x + b.extents.x, b.center.y - b.extents.y, b.center.z - b.extents.z));
-		pts [4] = camera.WorldToScreenPoint (new Vector3 (b.center.x - b.extents.x, b.center.y + b.extents.y, b.center.z + b.extents.z));
-		pts [5] = camera.WorldToScreenPoint (new Vector3 (b.center.x - b.extents.x, b.center.y + b.extents.y, b.center.z - b.extents.z));
-		pts [6] = camera.WorldToScreenPoint (new Vector3 (b.center.x - b.extents.x, b.center.y - b.extents.y, b.center.z + b.extents.z));
-		pts [7] = camera.WorldToScreenPoint (new Vector3 (b.center.x - b.extents.x, b.center.y - b.extents.y, b.center.z - b.extents.z));
+		pts [0] = Camera.main.WorldToScreenPoint (new Vector3 (b.center.x + b.extents.x, b.center.y + b.extents.y, b.center.z + b.extents.z));
+		pts [1] = Camera.main.WorldToScreenPoint (new Vector3 (b.center.x + b.extents.x, b.center.y + b.extents.y, b.center.z - b.extents.z));
+		pts [2] = Camera.main.WorldToScreenPoint (new Vector3 (b.center.x + b.extents.x, b.center.y - b.extents.y, b.center.z + b.extents.z));
+		pts [3] = Camera.main.WorldToScreenPoint (new Vector3 (b.center.x + b.extents.x, b.center.y - b.extents.y, b.center.z - b.extents.z));
+		pts [4] = Camera.main.WorldToScreenPoint (new Vector3 (b.center.x - b.extents.x, b.center.y + b.extents.y, b.center.z + b.extents.z));
+		pts [5] = Camera.main.WorldToScreenPoint (new Vector3 (b.center.x - b.extents.x, b.center.y + b.extents.y, b.center.z - b.extents.z));
+		pts [6] = Camera.main.WorldToScreenPoint (new Vector3 (b.center.x - b.extents.x, b.center.y - b.extents.y, b.center.z + b.extents.z));
+		pts [7] = Camera.main.WorldToScreenPoint (new Vector3 (b.center.x - b.extents.x, b.center.y - b.extents.y, b.center.z - b.extents.z));
 
 		//Get them in GUI space
 		for (int i = 0; i < pts.Length; i++)
@@ -99,7 +99,7 @@ public class OverHeadUIScript : MonoBehaviour {
 		r.yMax += margin;
 
 		//Render the box
-		GUI.Box (r, "This is a box covering the player");
+		GUI.Box (r, "");
 	}
 
 }

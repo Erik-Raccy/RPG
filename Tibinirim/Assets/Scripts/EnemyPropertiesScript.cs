@@ -2,7 +2,11 @@
 using System.Collections;
 using System.Linq;
 public class EnemyPropertiesScript : MonoBehaviour {
-    public Utility Utility;
+    
+	public Utility Utility;
+
+	//Camera camera;
+	Vector3 screenPosition;
 
 	public string Name;
     private int health { get; set; }
@@ -20,6 +24,7 @@ public class EnemyPropertiesScript : MonoBehaviour {
         TargetLevel = 10;
         Damage = 100;
         Utility = GetComponent<Utility>();
+
         
 	}
 	
@@ -33,6 +38,13 @@ public class EnemyPropertiesScript : MonoBehaviour {
         
         
     }
+
+	void OnGUI () {
+		screenPosition = Camera.main.WorldToScreenPoint(transform.position);// gets screen position.
+		screenPosition.y = Screen.height - (screenPosition.y + 1);// inverts y
+		Rect rect = new Rect(screenPosition.x - 50, screenPosition.y - 100, 100, 24);// makes a rect centered at the player ( 100x24 )
+		GUI.Box(rect, Name);
+	}
 
 	public void hit(int damage = 1) {
 		health = (health - damage > 0) ? (health - damage) : 0;
