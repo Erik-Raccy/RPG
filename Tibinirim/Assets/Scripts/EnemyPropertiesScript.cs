@@ -40,10 +40,14 @@ public class EnemyPropertiesScript : MonoBehaviour {
     }
 
 	void OnGUI () {
-		screenPosition = Camera.main.WorldToScreenPoint(transform.position);// gets screen position.
-		screenPosition.y = Screen.height - (screenPosition.y + 1);// inverts y
-		Rect rect = new Rect(screenPosition.x - 50, screenPosition.y - 100, 100, 24);// makes a rect centered at the player ( 100x24 )
-		GUI.Box(rect, Name);
+		if (Camera.main != null) {
+			screenPosition = Camera.main.WorldToScreenPoint (transform.position);// gets screen position.
+			screenPosition.y = Screen.height - (screenPosition.y + 1);// inverts y
+			Rect rect = new Rect (screenPosition.x - 50, screenPosition.y - 100, 100, 24);// makes a rect centered at the player ( 100x24 )
+			GUI.Box (rect, Name);
+			//GUI.Slider(rect, health/
+
+		}
 	}
 
 	public void hit(int damage = 1) {
