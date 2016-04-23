@@ -6,6 +6,9 @@ public class PlayerStatsScript : MonoBehaviour {
 	private int level;
 	private string vocation;
 
+    private float attackRate = 3;
+    private float attackRateTimer = 0;
+
 	private int maxHealth = 1000;
 	private int health = 1000;
 
@@ -42,6 +45,9 @@ public class PlayerStatsScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (attackRateTimer <= attackRate)
+            attackRateTimer = attackRateTimer + Time.deltaTime;
+
 		// if the player clicks on an enemy, select it as targeted. Only 1 enemy may be targeted at a time.
 		if (Input.GetMouseButtonDown (1)) {
 			RaycastHit hit;
@@ -61,9 +67,10 @@ public class PlayerStatsScript : MonoBehaviour {
 
 		//if the targeted enemy is in range, hit it
 		if (targetEnemy != null) {
-			if (Vector3.Distance (targetEnemy.transform.position, transform.position) < 1.5) {
+			if (Vector3.Distance (targetEnemy.transform.position, transform.position) < 1.6 && attackRateTimer >= attackRate) {
 				EnemyPropertiesScript enemyScript = targetEnemy.GetComponent<EnemyPropertiesScript> ();
-				enemyScript.hit();
+				enemyScript.hit(25);
+                attackRateTimer = 0;
 			}
 				
 		}
