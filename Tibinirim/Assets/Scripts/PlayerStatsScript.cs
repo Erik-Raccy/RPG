@@ -21,7 +21,7 @@ public class PlayerStatsScript : MonoBehaviour {
 	private OverHeadUIScript UI;
 
 	private GameObject targetEnemy;
-	Camera camera;
+	new Camera camera;
 
 	// Use this for initialization
 	void Start () {

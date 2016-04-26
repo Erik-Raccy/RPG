@@ -8,6 +8,8 @@ public class PlayerMovementScript : MonoBehaviour {
 	private Vector3 startPoint;
 	private Vector3 endPoint;
 
+    private Vector3 rayCastPoint;
+
 	private float speed;
 	private float speedModifier;
 	private float increment;
@@ -95,13 +97,13 @@ public class PlayerMovementScript : MonoBehaviour {
 
 	void CheckNextTile(Vector3 direction) {
 		RaycastHit hit;
-		Debug.DrawRay (transform.position, direction);
-		if (Physics.Raycast (transform.position, direction, out hit, 1))
+        rayCastPoint = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+        Debug.DrawRay (rayCastPoint, direction);
+		if (Physics.Raycast (rayCastPoint, direction, out hit, 1))
         {
-            //do nothing if terrain is inaccessable
+            //do nothing if terrain is inaccessable or an enemy
             if (hit.collider.gameObject.tag == "Enemy")
             {
-                stats.hit(1);
             }
             if (hit.collider.gameObject.tag == "Blocked") {
 			}

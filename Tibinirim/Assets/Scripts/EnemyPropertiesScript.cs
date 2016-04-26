@@ -1,24 +1,22 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using System.Linq;
+
 public class EnemyPropertiesScript : MonoBehaviour {
-    
-	public Utility Utility;
 
     //Camera camera;
     //Vector3 screenPosition;
 
-    public string name;
+    public new string name;
 
     private int health { get; set; }
     private int maxHealth { get; set; }
     private int Speed { get; set; }
     private int targetLevel { get; set; }
     private int Damage { get; set; }
+    private float attackRate = 3;
 
-    Transform closeEnemy;
-    private bool Target;
+    private float attackRateTimer = 0;
 
     public Slider healthSlider;
     public Text healthText;
@@ -34,11 +32,9 @@ public class EnemyPropertiesScript : MonoBehaviour {
         Speed = 1;
         targetLevel = 10;
         Damage = 100;
-        Utility = GetComponent<Utility>();
 
         setHealthSliderValue(health);
         setHealthSliderMaxValue(maxHealth);
-
 
     }
 	
@@ -47,14 +43,9 @@ public class EnemyPropertiesScript : MonoBehaviour {
         if (health <= 0)
             OnDeath();
 
+        if (attackRateTimer <= attackRate)
+            attackRateTimer = attackRateTimer + Time.deltaTime;
 
-        if(GameObject.FindGameObjectsWithTag("Player").Any() && !Target){
-            closeEnemy = Utility.GetClosestEnemy(GameObject.FindGameObjectsWithTag("Player").Select(x => x.transform).ToArray());
-            Debug.Log(closeEnemy.gameObject);
-            Target = true;
-        }
-        
-        
     }
 
 	void OnGUI () {
@@ -85,6 +76,21 @@ public class EnemyPropertiesScript : MonoBehaviour {
     {
         healthSlider.maxValue = inMaxHealth;
         healthText.text = healthSlider.value + " / " + inMaxHealth;
+    }
+
+    public int GetSpeed()
+    {
+        return Speed;
+    }
+
+    public void Attack(PlayerStatsScript player)
+    {
+        if (attackRateTimer > attackRate)
+        {
+            player.hit(Damage);
+            attackRateTimer = 0;
+        }
+          
     }
 
     void OnDeath()
